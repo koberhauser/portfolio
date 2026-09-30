@@ -4,3 +4,8 @@ body {
 	 */
   font: 100%/1.5 system-ui;
 }
+
+.resume-logo {
+    width: 100px;
+    height: auto;
+}
