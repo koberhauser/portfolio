@@ -9,3 +9,8 @@ body {
     width: 100px;
     height: auto;
 }
+
+.profile-photo {
+    width: 400px;
+    height: auto;
+}
