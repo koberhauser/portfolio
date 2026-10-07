@@ -6,7 +6,7 @@
     <title>Resume | Kate Oberhauser</title>
     <link rel="stylesheet" href="../style.css">
 </head>
-<body>
+<body class="resume">
     <nav>
         <a href="../index.html">Home</a>
         <a href="index.html" class="current">Resume</a>
@@ -15,28 +15,34 @@
         <a href="https://github.com/koberhauser" target="_blank">GitHub</a>
     </nav>
     
-    <h1>Kate Oberhauser</h1>
-
-    <p>
+    <header class="resume-header">
+        <h1>Kate Oberhauser</h1>
         <a href="https://www.linkedin.com/in/kate-oberhauser" target="_blank">LinkedIn</a>
-    </p>
+    </header>
 
     <section>
         <h2>Education</h2>
+        
+        <div class="resume-education-header">
+            <h3>University of California, San Diego</h3>
+            <p>Graduation: <time datetime="2028-06">June 2028</time></p>
+        </div>
 
-        <h3>University of California, San Diego</h3>
-        <p>B.S. in Data Science | Minor in Business | GPA: 3.84</p>
-        <p>Graduation Date: <time datetime="2028-06">June 2028</time></p>
+<p>B.S. in Data Science | Minor in Business | GPA: 3.84</p>
     </section>
 
     <section>
         <h2>Work Experience</h2>
 
         <article>
-            <img class="resume-logo" src="../images/bayclublogo.png" alt="The Bay Club logo">
-
-            <h3>The Bay Club | Operations Intern | San Francisco, CA</h3>
-            <p><time datetime="2026-06">June 2026</time> – <time datetime="2026-08">August 2026</time></p>
+            <div class="resume-entry-header">
+                <img class="resume-logo" src="../images/bayclublogo.png" alt="The Bay Club logo">
+                <h3>The Bay Club | Operations Intern | San Francisco, CA</h3>
+                <p class="resume-date">
+                    <time datetime="2026-06">June 2026</time> –
+                    <time datetime="2026-08">August 2026</time>
+                </p>
+</div>
 
             <ul>
                 <li>Analyzed core business and operating metrics, including club usage, membership dues, revenue, capital investment, PIF waterfall, preliminary financial results, and EBITDA</li>
@@ -50,11 +56,13 @@
         </article>
 
         <article>
-            <h3>Brookside Club of Saratoga | Marketing Analyst | Saratoga, CA</h3>
-            <p>
-                <time datetime="2025-07">July 2025</time> –
-                <time datetime="2025-09">September 2025</time>
-            </p>
+            <div class="resume-entry-header no-logo">
+                <h3>Brookside Club of Saratoga | Marketing Analyst | Saratoga, CA</h3>
+                <p class="resume-date">
+                    <time datetime="2025-07">July 2025</time> –
+                    <time datetime="2025-09">September 2025</time>
+                </p>
+</div>
 
             <ul>
                 <li>Analyzed member demographics, membership turnover, and facility usage using Python to identify trends</li>
@@ -65,11 +73,13 @@
         </article>
 
         <article>
-            <h3>Allstars United SC | Youth Soccer Coach | Saratoga, CA</h3>
-            <p>
-                <time datetime="2024-01">January 2024</time> –
-                <time datetime="2024-06">June 2024</time>
-            </p>
+            <div class="resume-entry-header no-logo">
+                <h3>Allstars United SC | Youth Soccer Coach | Saratoga, CA</h3>
+                <p class="resume-date">
+                    <time datetime="2024-01">January 2024</time> –
+                    <time datetime="2024-06">June 2024</time>
+                </p>
+</div>
 
             <ul>
                 <li>Trained a U10 girls soccer team</li>
@@ -107,12 +117,13 @@
         <h2>Extracurricular Activities</h2>
 
         <article>
-            <img class="resume-logo" src="../images/everychildplayslogo.webp" alt="Every Child Plays logo">
-
-            <h3>Every Child Plays | Sports Coach</h3>
-            <p>
-                <time datetime="2025-09">September 2025</time> – Present
-            </p>
+            <div class="resume-entry-header">
+                <img class="resume-logo" src="../images/everychildplayslogo.webp" alt="Every Child Plays logo">
+                <h3>Every Child Plays | Sports Coach</h3>
+                <p class="resume-date">
+                    <time datetime="2025-09">September 2025</time> – Present
+                </p>
+            </div>
             <ul>
                 <li>
                     Fostered a supportive and encouraging environment for children with autism
@@ -122,19 +133,25 @@
         </article>
 
         <article>
-            <h3>UCSD Women's Club Soccer | Vice President</h3>
-            <p>
-                Team Member: <time datetime="2025-09">September 2025</time> – Present<br>
-                Vice President: <time datetime="2026-05">May 2026</time> – Present
-            </p>
+            <h3>UCSD Women's Club Soccer</h3>
+            <div class="resume-role">
+                <span>Team Member</span>
+                <span>September 2025 – Present</span>
+            </div>
+            <div class="resume-role">
+                <span>Vice President</span>
+                <span>May 2026 – Present</span>
+            </div>
         </article>
 
         <article>
-            <h3>UCSD Women's Soccer | NCAA Division I</h3>
-            <p>
-                <time datetime="2024-06">June 2024</time> –
-                <time datetime="2025-06">June 2025</time>
-            </p>
+            <div class="resume-entry-header no-logo">
+                <h3>UCSD Women's Soccer | NCAA Division I</h3>
+                <p class="resume-date">
+                    <time datetime="2024-06">June 2024</time> –
+                    <time datetime="2025-06">June 2025</time>
+                </p>
+            </div>
         </article>
     </section>
 </body>

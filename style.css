@@ -1,5 +1,5 @@
 html {
-    --color-accent: oklch(55% 40% 285);
+    --color-accent: oklch(29.986% 0.18295 266.798);
     accent-color: var(--color-accent);
 }
 
@@ -70,6 +70,11 @@ button {
     grid-column: 1 / -1;
 }
 
+.profile-photo {
+    width: 400px;
+    height: auto;
+}
+
 .projects {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
@@ -86,12 +91,81 @@ button {
     margin: 0;
 }
 
+.resume section {
+    margin-block: 2em;
+}
+
+.resume article {
+    margin-block: 1.25em;
+}
+
+.resume section > h2 {
+    border-bottom: 2px solid var(--color-accent);
+    padding-bottom: 0.25em;
+    margin-bottom: 1em;
+}
+
+.resume-entry-header {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 1em;
+}
+
+.resume-entry-header h3,
+.resume-entry-header p {
+    margin: 0;
+}
+
+.resume-date {
+    text-align: right;
+    white-space: nowrap;
+}
+
 .resume-logo {
-    width: 100px;
+    width: 75px;
     height: auto;
 }
 
-.profile-photo {
-    width: 400px;
-    height: auto;
+.resume-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1em;
+    margin-block: 3em 2em;
+}
+
+.resume-header a {
+    color: var(--color-accent);
+    text-decoration: none;
+}
+
+.resume-header a:hover {
+    text-decoration: underline;
+}
+
+.resume-header h1 {
+    margin: 0;
+}
+
+.resume-education-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1em;
+}
+
+.resume-education-header h3,
+.resume-education-header p {
+    margin-block: 0.25em;
+}
+
+.resume-entry-header.no-logo {
+    grid-template-columns: 1fr auto;
+}
+
+.resume-role {
+    display: flex;
+    justify-content: space-between;
+    gap: 1em;
 }
