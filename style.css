@@ -140,7 +140,7 @@ button {
 }
 
 .resume-header a {
-    color: var(--color-accent);
+    color: inherit;
     text-decoration: none;
 }
 
