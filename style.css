@@ -184,3 +184,24 @@ button {
 .color-scheme select {
     font: inherit;
 }
+
+/* GitHub Statistics */
+#profile-stats dl {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+}
+
+#profile-stats dt {
+    grid-row: 1;
+    color: gray;
+    text-transform: uppercase;
+    font-size: 1rem;
+}
+
+#profile-stats dd {
+    grid-row: 2;
+    margin: 0;
+    font-size: 2.5rem;
+    font-weight: 300;
+}
