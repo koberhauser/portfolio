@@ -1,61 +1,73 @@
 [
     {
-        "title": "Lorem ipsum dolor sit.",
-        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem doloremque labore voluptate expedita totam numquam voluptatem, eaque illum quaerat dolores accusamus ad quas inventore praesentium soluta. Similique asperiores neque blanditiis!"
+        "title": "Persuasive or Deceptive Visualization?",
+        "year": "2026",
+        "image": "../images/deceptive_fig.png",
+        "description": "Created two contrasting data visualizations using U.S. abortion data to support and challenge the proposition that a handful of states provide most of the nation's abortions. Explored how design choices, including data selection, visual emphasis, and framing, can influence how viewers interpret the same data."
     },
     {
-        "title": "Enim illo laudantium aut!",
-        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "description": "Nisi, quo rerum cumque placeat cupiditate dicta harum, totam vero quibusdam iure error quaerat magnam. Explicabo, laudantium nisi et necessitatibus repellat nam omnis temporibus ipsa dignissimos provident repellendus vel animi?"
+        "title": "Processed Chicken: What Are We Really Paying For?",
+        "year": "2026",
+        "image": "../images/chicken_convenience_tax.png",
+        "description": "Created a data visualization comparing the price and nutritional value of raw versus processed chicken using GroceryDB data. The visualization and accompanying written analysis explored differences in price, protein, sodium, and fat."
     },
     {
-        "title": "Reiciendis earum magni ipsa?",
-        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "description": "Saepe vero maiores ab eligendi provident fuga maxime beatae eveniet nam, quasi nobis earum distinctio sequi iusto omnis tenetur optio possimus similique, fugiat reprehenderit magni? Explicabo et expedita enim qui!"
+        "title": "Perceived Healthiness vs. Nutritional Content in Recipes",
+        "year": "2026",
+        "image": "../images/recipe_ratings_analysis_graph.png",
+        "description": "Analyzed Food.com recipe data to investigate how nutritional characteristics relate to perceived healthiness. Conducted exploratory data analysis, hypothesis testing, and feature engineering, then developed and tuned a Random Forest classifier to predict whether recipes were labeled healthy."
     },
     {
-        "title": "Totam quas deserunt eaque!",
-        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "description": "Ducimus harum aspernatur, quae debitis, reiciendis totam quo provident, maxime quos omnis ullam reprehenderit enim est adipisci neque non accusantium? Odit architecto autem ullam maxime consectetur atque ipsa eaque delectus."
+        "title": "Isotretinoin Ocular Side Effects Research",
+        "year": "2025",
+        "image": "../images/isotretinoin_heatmap.png",
+        "description": "Collaborated on a research project investigating the potential ocular side effects of isotretinoin. Developed a Python-based simulated data generator and explored statistical analysis and visualization techniques, including correlation heatmaps and violin plots, to prepare for analysis of real patient data."
     },
     {
         "title": "Amet ipsam laborum rerum.",
+        "year": "2025",
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
         "description": "Fuga quam facere repellat sed perferendis. Possimus et temporibus sunt hic, ipsum tenetur cumque, fuga molestias architecto iure quis recusandae placeat commodi rem eligendi necessitatibus. Fuga mollitia atque impedit necessitatibus."
     },
     {
         "title": "Vitae voluptatibus nihil ab.",
+        "year": "2025",
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
         "description": "Ducimus repellat dignissimos ut provident molestiae, nam veritatis vero nisi officiis, quis repudiandae autem cum! Vitae nam adipisci facilis temporibus at quod repudiandae doloremque impedit, quam iusto pariatur incidunt cumque!"
     },
     {
         "title": "Excepturi voluptates reiciendis necessitatibus!",
+        "year": "2025",
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
         "description": "Beatae omnis hic a ducimus vel minus. Asperiores odio porro voluptatum aliquid modi quidem optio beatae voluptas corporis ab, laudantium expedita accusamus illo reiciendis dolore consequuntur unde deserunt necessitatibus pariatur!"
     },
     {
         "title": "Hic molestias doloribus temporibus.",
+        "year": "2024",
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
         "description": "Expedita culpa magni harum temporibus nesciunt. Sed, ut culpa corporis commodi ab maiores suscipit nemo laudantium quasi beatae? Inventore mollitia sit voluptatibus nostrum magnam delectus blanditiis labore sunt, alias exercitationem?"
     },
     {
         "title": "Debitis animi quisquam reiciendis.",
+        "year": "2024",
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
         "description": "Commodi alias fuga facilis dolor et hic, nulla provident, dolore expedita quis quisquam velit reprehenderit beatae saepe magni necessitatibus repellendus minus consequatur. Ipsam enim officiis consectetur quod unde! Repellendus, quam."
     },
     {
         "title": "Odio cumque molestiae eaque.",
+        "year": "2024",
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
         "description": "Quibusdam distinctio reiciendis aliquid illo deserunt! Suscipit alias nisi dolorem molestias magni laboriosam eos unde. Qui inventore, maxime suscipit sequi autem at ipsum rerum fuga, recusandae quas, numquam facere natus."
     },
     {
         "title": "Neque veniam corporis quas.",
+        "year": "2023",
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
         "description": "Perspiciatis ullam aliquam voluptate, labore magnam ab ipsam aperiam voluptas, temporibus eaque quia in necessitatibus nemo! Commodi modi, atque incidunt, eveniet rerum nobis corrupti tempora dicta cumque, illum doloremque laudantium."
     },
     {
         "title": "Ea dolorem iusto eos.",
+        "year": "2023",
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
         "description": "Quam, necessitatibus? Maxime laboriosam voluptatum aliquam, eos quibusdam expedita at soluta debitis saepe praesentium repellendus repudiandae molestiae ad reiciendis sit dolorum rem mollitia autem culpa! Dolores laudantium reiciendis veritatis iure."
     }
