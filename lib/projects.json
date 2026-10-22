@@ -2,25 +2,25 @@
     {
         "title": "Persuasive or Deceptive Visualization?",
         "year": "2026",
-        "image": "../images/deceptive_fig.png",
+        "image": "/portfolio/images/deceptive_fig.png",
         "description": "Created two contrasting data visualizations using U.S. abortion data to support and challenge the proposition that a handful of states provide most of the nation's abortions. Explored how design choices, including data selection, visual emphasis, and framing, can influence how viewers interpret the same data."
     },
     {
         "title": "Processed Chicken: What Are We Really Paying For?",
         "year": "2026",
-        "image": "../images/chicken_convenience_tax.png",
+        "image": "/portfolio/images/chicken_convenience_tax.png",
         "description": "Created a data visualization comparing the price and nutritional value of raw versus processed chicken using GroceryDB data. The visualization and accompanying written analysis explored differences in price, protein, sodium, and fat."
     },
     {
         "title": "Perceived Healthiness vs. Nutritional Content in Recipes",
         "year": "2026",
-        "image": "../images/recipe_ratings_analysis_graph.png",
+        "image": "/portfolio/images/recipe_ratings_analysis_graph.png",
         "description": "Analyzed Food.com recipe data to investigate how nutritional characteristics relate to perceived healthiness. Conducted exploratory data analysis, hypothesis testing, and feature engineering, then developed and tuned a Random Forest classifier to predict whether recipes were labeled healthy."
     },
     {
         "title": "Isotretinoin Ocular Side Effects Research",
         "year": "2025",
-        "image": "../images/isotretinoin_heatmap.png",
+        "image": "/portfolio/images/isotretinoin_heatmap.png",
         "description": "Collaborated on a research project investigating the potential ocular side effects of isotretinoin. Developed a Python-based simulated data generator and explored statistical analysis and visualization techniques, including correlation heatmaps and violin plots, to prepare for analysis of real patient data."
     },
     {
