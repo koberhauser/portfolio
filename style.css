@@ -217,3 +217,9 @@ button {
     font-family: Baskerville, serif;
     font-variant-numeric: oldstyle-nums;
 }
+
+#projects-plot {
+    max-width: 20em;
+    margin-block: 2em;
+    overflow: visible;
+}
