@@ -211,3 +211,9 @@ button {
     font-size: 2.5rem;
     font-weight: 300;
 }
+
+.project-year {
+    color: gray;
+    font-family: Baskerville, serif;
+    font-variant-numeric: oldstyle-nums;
+}
