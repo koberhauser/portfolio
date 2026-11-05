@@ -159,25 +159,39 @@ function renderScatterPlot(data, commits) {
     xScale.range([usableArea.left, usableArea.right]);
     yScale.range([usableArea.bottom, usableArea.top]);
 
+    // Calculate the range of lines edited per commit
+    const [minLines, maxLines] = d3.extent(commits, (d) => d.totalLines);
+
+    // Map lines edited to circle radius
+    const rScale = d3.scaleSqrt()
+        .domain([minLines, maxLines])
+        .range([2, 30]);
+
+    // Sort commits so smaller dots appear on top
+    const sortedCommits = d3.sort(commits, (d) => -d.totalLines);
+
     // Draw dots
     const dots = svg.append('g').attr('class', 'dots');
 
     dots
-        .selectAll('circle')
-        .data(commits)
-        .join('circle')
-        .attr('cx', (d) => xScale(d.datetime))
-        .attr('cy', (d) => yScale(d.hourFrac))
-        .attr('r', 5)
-        .attr('fill', 'steelblue')
-        .on('mouseenter', (event, commit) => {
-            renderTooltipContent(commit);
-            updateTooltipVisibility(true);
-            updateTooltipPosition(event);
-        })
-        .on('mouseleave', () => {
-            updateTooltipVisibility(false);
-        });
+    .selectAll('circle')
+    .data(sortedCommits)
+    .join('circle')
+    .attr('cx', (d) => xScale(d.datetime))
+    .attr('cy', (d) => yScale(d.hourFrac))
+    .attr('r', (d) => rScale(d.totalLines))
+    .attr('fill', 'steelblue')
+    .style('fill-opacity', 0.7)
+    .on('mouseenter', (event, commit) => {
+        d3.select(event.currentTarget).style('fill-opacity', 1);
+        renderTooltipContent(commit);
+        updateTooltipVisibility(true);
+        updateTooltipPosition(event);
+    })
+    .on('mouseleave', (event) => {
+        d3.select(event.currentTarget).style('fill-opacity', 0.7);
+        updateTooltipVisibility(false);
+    });
 
 
     // Add horizontal gridlines
