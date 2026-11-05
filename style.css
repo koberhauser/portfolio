@@ -325,3 +325,50 @@ path {
 .gridlines path {
     display: none;
 }
+
+/* Commit tooltip */
+dl.info {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 0.5rem 1rem;
+}
+
+dl.info dt {
+    color: #808899;
+}
+
+dl.info dd {
+    margin: 0;
+}
+
+dl.info {
+    transition-duration: 500ms;
+    transition-property: opacity, visibility;
+}
+
+dl.info[hidden]:not(:hover, :focus-within) {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.tooltip {
+    position: fixed;
+    top: 1em;
+    left: 1em;
+    background-color: #242424;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    z-index: 10;
+}
+
+/* Scatterplot hover */
+.dots circle {
+    transition: 200ms;
+    transform-origin: center;
+    transform-box: fill-box;
+}
+
+.dots circle:hover {
+    transform: scale(1.5);
+}
