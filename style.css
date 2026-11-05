@@ -288,7 +288,7 @@ path {
 
 .stats {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(6, 1fr);
     gap: 1rem;
     margin: 0;
     padding: 0;
@@ -315,4 +315,13 @@ path {
     .stats {
         grid-template-columns: repeat(2, 1fr);
     }
+}
+
+/* Scatterplot gridlines */
+.gridlines line {
+    stroke-width: 1;
+}
+
+.gridlines path {
+    display: none;
 }
