@@ -103,6 +103,7 @@ export async function fetchJSON(url) {
     }
 }
 
+
 export function renderProjects(projects, containerElement, headingLevel = 'h2') {
     containerElement.innerHTML = '';
 
@@ -111,8 +112,13 @@ export function renderProjects(projects, containerElement, headingLevel = 'h2') 
 
         const imageUrl = new URL(project.image, import.meta.url).href;
 
+        // Add a link if the project has a URL
+        const projectTitle = project.url
+            ? `<a href="${project.url}" target="_blank" rel="noopener noreferrer">${project.title}</a>`
+            : project.title;
+
         article.innerHTML = `
-            <${headingLevel}>${project.title}</${headingLevel}>
+            <${headingLevel}>${projectTitle}</${headingLevel}>
             <img src="${imageUrl}" alt="${project.title}">
             <div class="project-details">
                 <p>${project.description}</p>

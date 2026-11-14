@@ -1,9 +1,17 @@
 [
     {
+        "title": "Bikewatching",
+        "year": "2026",
+        "image": "./images/bikewatching.png",
+        "description": "An interactive map exploring bike traffic patterns across Boston and Cambridge using Mapbox and D3. Visualizes station traffic volume and arrival/departure patterns throughout the day.",
+        "url": "https://koberhauser.github.io/bikewatching/"
+    },
+    {
         "title": "Persuasive or Deceptive Visualization?",
         "year": "2026",
         "image": "./images/deceptive_fig.png",
-        "description": "Created two contrasting data visualizations using U.S. abortion data to support and challenge the proposition that a handful of states provide most of the nation's abortions. Explored how design choices, including data selection, visual emphasis, and framing, can influence how viewers interpret the same data."
+        "description": "Created two contrasting data visualizations using U.S. abortion data to support and challenge the proposition that a handful of states provide most of the nation's abortions. Explored how design choices, including data selection, visual emphasis, and framing, can influence how viewers interpret the same data.",
+        "url": "https://koberhauser.github.io/dsc106-project2/"
     },
     {
         "title": "Processed Chicken: What Are We Really Paying For?",
@@ -15,7 +23,8 @@
         "title": "Perceived Healthiness vs. Nutritional Content in Recipes",
         "year": "2026",
         "image": "./images/recipe_ratings_analysis_graph.png",
-        "description": "Analyzed Food.com recipe data to investigate how nutritional characteristics relate to perceived healthiness. Conducted exploratory data analysis, hypothesis testing, and feature engineering, then developed and tuned a Random Forest classifier to predict whether recipes were labeled healthy."
+        "description": "Analyzed Food.com recipe data to investigate how nutritional characteristics relate to perceived healthiness. Conducted exploratory data analysis, hypothesis testing, and feature engineering, then developed and tuned a Random Forest classifier to predict whether recipes were labeled healthy.",
+        "url": "https://koberhauser.github.io/recipe_ratings_analysis/"
     },
     {
         "title": "Isotretinoin Ocular Side Effects Research",
