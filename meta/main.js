@@ -42,6 +42,31 @@ let commits = d3.groups(data, d => d.commit)
         return commit;
     });
 
+    let commitProgress = 100;
+
+let timeScale = d3
+    .scaleTime()
+    .domain([
+        d3.min(commits, (d) => d.datetime),
+        d3.max(commits, (d) => d.datetime),
+    ])
+    .range([0, 100]);
+
+let commitMaxTime = timeScale.invert(commitProgress);
+
+function onTimeSliderChange() {
+    const slider = document.querySelector('#commit-progress');
+
+    commitProgress = Number(slider.value);
+    commitMaxTime = timeScale.invert(commitProgress);
+
+    document.querySelector('#commit-time').textContent =
+        commitMaxTime.toLocaleString('en', {
+            dateStyle: 'long',
+            timeStyle: 'short',
+        });
+}
+
 function displayStats() {
     const stats = d3.select('#stats');
 
@@ -330,3 +355,8 @@ function renderScatterPlot(data, commits) {
 
 displayStats();
 renderScatterPlot(data, commits);
+
+document.querySelector('#commit-progress')
+    .addEventListener('input', onTimeSliderChange);
+
+onTimeSliderChange();
