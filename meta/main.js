@@ -53,6 +53,8 @@ let timeScale = d3
     .range([0, 100]);
 
 let commitMaxTime = timeScale.invert(commitProgress);
+// Will get updated as user changes slider
+let filteredCommits = commits;
 
 function onTimeSliderChange() {
     const slider = document.querySelector('#commit-progress');
@@ -65,6 +67,13 @@ function onTimeSliderChange() {
             dateStyle: 'long',
             timeStyle: 'short',
         });
+
+    filteredCommits = commits.filter(
+        (d) => d.datetime <= commitMaxTime
+    );
+
+    // Update the existing scatterplot
+    updateScatterPlot(data, filteredCommits);
 }
 
 function displayStats() {
@@ -287,7 +296,7 @@ function renderScatterPlot(data, commits) {
 
     dots
     .selectAll('circle')
-    .data(sortedCommits)
+    .data(sortedCommits, (d) => d.id)
     .join('circle')
     .attr('cx', (d) => xScale(d.datetime))
     .attr('cy', (d) => yScale(d.hourFrac))
@@ -341,20 +350,95 @@ function renderScatterPlot(data, commits) {
     svg
         .append('g')
         .attr('transform', `translate(0, ${usableArea.bottom})`)
+        .attr('class', 'x-axis')
         .call(xAxis);
 
     // Add Y axis
     svg
         .append('g')
         .attr('transform', `translate(${usableArea.left}, 0)`)
+        .attr('class', 'y-axis')
         .call(yAxis);
+}
 
-    // Initialize brushing
-    createBrushSelector(svg);
+
+function updateScatterPlot(data, commits) {
+    const width = 1000;
+    const height = 600;
+    const margin = { top: 10, right: 10, bottom: 30, left: 20 };
+
+    const usableArea = {
+        top: margin.top,
+        right: width - margin.right,
+        bottom: height - margin.bottom,
+        left: margin.left,
+        width: width - margin.left - margin.right,
+        height: height - margin.top - margin.bottom,
+    };
+
+    // Select the existing SVG instead of creating a new one
+    const svg = d3.select('#chart').select('svg');
+
+    // Update the X scale
+    if (commits.length > 0) {
+        xScale.domain(d3.extent(commits, (d) => d.datetime));
+    }
+
+    // Update circle radius scale
+    const [minLines, maxLines] = d3.extent(
+        commits,
+        (d) => d.totalLines
+    );
+
+    const rScale = d3.scaleSqrt()
+        .domain([minLines ?? 0, maxLines ?? 1])
+        .range([2, 30]);
+
+    // Update the existing X axis
+    const xAxis = d3.axisBottom(xScale)
+        .tickFormat((d) => {
+            if (d.getDate() === 1) {
+                return d3.timeFormat('%b')(d);
+            }
+            return d3.timeFormat('%a %d')(d);
+        });
+
+    const xAxisGroup = svg.select('g.x-axis');
+    xAxisGroup.selectAll('*').remove();
+    xAxisGroup.call(xAxis);
+
+    // Update existing dots
+    const dots = svg.select('g.dots');
+    const sortedCommits = d3.sort(commits, (d) => -d.totalLines);
+
+    dots
+        .selectAll('circle')
+        .data(sortedCommits, (d) => d.id)
+        .join('circle')
+        .attr('cx', (d) => xScale(d.datetime))
+        .attr('cy', (d) => yScale(d.hourFrac))
+        .attr('r', (d) => rScale(d.totalLines))
+        .attr('fill', 'steelblue')
+        .style('fill-opacity', 0.7)
+        .on('mouseenter', (event, commit) => {
+            d3.select(event.currentTarget)
+                .style('fill-opacity', 1);
+            renderTooltipContent(commit);
+            updateTooltipVisibility(true);
+            updateTooltipPosition(event);
+        })
+        .on('mouseleave', (event) => {
+            d3.select(event.currentTarget)
+                .style('fill-opacity', 0.7);
+            updateTooltipVisibility(false);
+        });
+
+    // Keep dots above the brush overlay
+    svg.selectAll('.dots, .overlay ~ *').raise();
 }
 
 displayStats();
-renderScatterPlot(data, commits);
+renderScatterPlot(data, filteredCommits);
 
 document.querySelector('#commit-progress')
     .addEventListener('input', onTimeSliderChange);

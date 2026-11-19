@@ -367,6 +367,10 @@ dl.info[hidden]:not(:hover, :focus-within) {
     transition: 200ms;
     transform-origin: center;
     transform-box: fill-box;
+
+    @starting-style {
+        r: 0;
+    }
 }
 
 .dots circle:hover {
