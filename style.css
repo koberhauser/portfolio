@@ -471,3 +471,59 @@ dl.info[hidden]:not(:hover, :focus-within) {
     background: var(--color);
     border-radius: 50%;
 }
+
+/* Scrollytelling layout */
+#scrolly-1 {
+    position: relative;
+    display: flex;
+    gap: 1rem;
+
+    > * {
+        flex: 1;
+        min-width: 0;
+    }
+}
+
+#scatter-story {
+    position: relative;
+}
+
+#scatter-plot {
+    position: sticky;
+    top: 0;
+    left: 0;
+    bottom: auto;
+    height: 50vh;
+    align-self: flex-start;
+}
+
+#scrolly-2 {
+    position: relative;
+    display: flex;
+    gap: 1rem;
+}
+
+#scrolly-2 > * {
+    flex: 1;
+    min-width: 0;
+}
+
+#file-story {
+    position: relative;
+}
+
+#file-story .step {
+    padding-bottom: 80vh;
+}
+
+#file-plot {
+    position: sticky;
+    top: 0;
+    align-self: flex-start;
+    max-height: 100vh;
+    overflow-y: auto;
+}
+
+#scatter-story .step {
+    padding-bottom: 80vh;
+}
