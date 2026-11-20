@@ -74,6 +74,7 @@ function onTimeSliderChange() {
 
     // Update the existing scatterplot
     updateScatterPlot(data, filteredCommits);
+    updateFileDisplay(filteredCommits);
 }
 
 function displayStats() {
@@ -436,6 +437,52 @@ function updateScatterPlot(data, commits) {
     // Keep dots above the brush overlay
     svg.selectAll('.dots, .overlay ~ *').raise();
 }
+
+
+function updateFileDisplay(filteredCommits) {
+    // Get all lines from the filtered commits
+    let lines = filteredCommits.flatMap((d) => d.lines);
+
+    // Group lines by filename
+    let files = d3
+        .groups(lines, (d) => d.file)
+        .map(([name, lines]) => {
+            return { name, lines };
+        })
+        .sort((a, b) => b.lines.length - a.lines.length);
+
+    // Create or update the HTML elements for each file
+    let filesContainer = d3
+        .select('#files')
+        .selectAll('div')
+        .data(files, (d) => d.name)
+        .join(
+            (enter) =>
+                enter.append('div').call((div) => {
+                    div.append('dt').append('code');
+                    div.append('dd');
+                }),
+        );
+
+    // Display the filename and line count
+    filesContainer
+        .select('dt')
+        .html((d) => `
+            <code>${d.name}</code>
+            <small>${d.lines.length} lines</small>
+        `);
+
+    // Append one dot for each line of code
+    let colors = d3.scaleOrdinal(d3.schemeTableau10);
+
+    filesContainer
+        .select('dd')
+        .selectAll('div')
+        .data((d) => d.lines)
+        .join('div')
+        .attr('class', 'loc')
+        .attr('style', (d) => `--color: ${colors(d.type)}`);
+    }
 
 displayStats();
 renderScatterPlot(data, filteredCommits);
